@@ -1,0 +1,22 @@
+{
+  "nav": { "home": "হোম", "city": "শহর", "track": "ট্র্যাক", "badges": "ব্যাজ", "community": "সম্প্রদায়", "reports": "প্রতিবেদন", "settings": "সেটিংস" },
+  "landing": { "tagline": "কার্বন পদচিহ্ন সচেতনতা", "headline": "আপনার প্রভাব জানুন।", "headlineAccent": "পৃথিবীকে সুস্থ করুন।", "subtext": "Prithvi আপনাকে আপনার কার্বন পদচিহ্ন ট্র্যাক, বুঝতে এবং কমাতে সাহায্য করে।", "ctaStart": "ট্র্যাকিং শুরু করুন", "ctaCommunity": "সম্প্রদায়ে যোগ দিন", "stats": { "cities": "শহর ট্র্যাক করা হয়েছে", "offset": "টন অফসেট", "badges": "ব্যাজ অর্জিত", "members": "সক্রিয় সদস্য" } },
+  "score": { "good": "ভালো", "fair": "ঠিকঠাক", "poor": "খারাপ", "label": "শহরের স্বাস্থ্য", "srOnly": "আপনার কার্বন স্কোর 100-এর মধ্যে {{score}} — {{label}}" },
+  "tracking": {
+    "commute": { "label": "যাতায়াত", "description": "আজ আপনি কীভাবে যাতায়াত করলেন?", "walk": "হাঁটা", "cycle": "সাইকেল", "metro": "মেট্রো", "bus": "বাস", "auto_cng": "অটো (CNG)", "bike_2wheeler": "বাইক", "car_petrol": "গাড়ি (পেট্রোল)", "car_diesel": "গাড়ি (ডিজেল)", "cab": "ক্যাব" },
+    "food": { "label": "খাবার", "description": "আজ আপনি কী খেলেন?", "vegetarian": "নিরামিষ", "egg": "ডিম", "chicken": "মুরগি", "mutton": "মাটন" },
+    "energy": { "label": "শক্তি", "description": "আজ কীভাবে শক্তি ব্যবহার করলেন?", "ac": "AC", "fan": "পাখা", "geyser_per_use": "গিজার" },
+    "cooking": { "label": "রান্না", "description": "আজ কীভাবে রান্না করলেন?", "lpg": "LPG", "induction": "ইন্ডাকশন", "wood": "কাঠ" },
+    "waste": { "label": "বর্জ্য", "description": "বর্জ্য কীভাবে পরিচালনা করলেন?", "plastic_bag": "প্লাস্টিক ব্যাগ", "delivery_packaging": "ডেলিভারি বাক্স" },
+    "logButton": "কার্যকলাপ লগ করুন", "logged": "সফলভাবে লগ করা হয়েছে", "empty": "আজ কোনো কার্যকলাপ লগ করা হয়নি"
+  },
+  "swap": { "title": "আপনার ব্যক্তিগত পরামর্শ", "co2Saved": "CO\u2082 সাশ্রয়", "moneySaved": "অর্থ সাশ্রয়", "pledge": "আগামীকালের জন্য অঙ্গীকার করুন", "dismiss": "বাতিল করুন", "pledged": "আগামীকালের জন্য অঙ্গীকার করা হয়েছে — দারুণ পছন্দ!" },
+  "city": { "title": "আপনার শহর", "thriving": "সমৃদ্ধ", "healthy": "সুস্থ", "stressed": "চাপে", "critical": "সংকটজনক", "score": "স্বাস্থ্য স্কোর" },
+  "badges": { "title": "ব্যাজ ও অগ্রগতি", "locked": "লক", "unlocked": "আনলক", "xp": "XP", "level": "স্তর", "streak": "দিনের ধারাবাহিকতা" },
+  "community": { "title": "সম্প্রদায়", "tabs": { "city": "আমার শহর", "friends": "বন্ধুরা", "national": "জাতীয়" }, "pledgeWall": "অঙ্গীকার প্রাচীর", "leaderboard": "লিডারবোর্ড", "pledge": "অঙ্গীকার করুন", "support": "সমর্থন", "supported": "সমর্থিত", "alreadyPosted": "আপনি আজ ইতিমধ্যে অঙ্গীকার করেছেন। আগামীকাল ফিরে আসুন!", "rank": "র‍্যাংক", "weeklyScore": "সাপ্তাহিক স্কোর" },
+  "reports": { "title": "মাসিক প্রতিবেদন", "bestDay": "সেরা দিন", "worstDay": "সবচেয়ে খারাপ দিন", "topSources": "শীর্ষ কার্বন উৎস", "exportPDF": "PDF হিসেবে রপ্তানি করুন", "exportJSON": "JSON হিসেবে রপ্তানি করুন", "sharePNG": "দিনের কার্ড শেয়ার করুন", "noData": "এখনও কোনো ডেটা নেই। প্রতিবেদন দেখতে ট্র্যাকিং শুরু করুন।" },
+  "settings": { "title": "সেটিংস", "subtitle": "আপনার Prithvi পছন্দগুলি পরিচালনা করুন", "language": "ভাষা", "city": "শহর", "notifications": "বিজ্ঞপ্তি", "ai": "AI কনফিগারেশন", "apiKey": "API কী", "testConnection": "সংযোগ পরীক্ষা করুন", "sync": "সিঙ্ক", "syncNow": "এখনই সিঙ্ক করুন", "syncing": "সিঙ্ক হচ্ছে...", "synced": "সিঙ্ক হয়েছে", "offline": "অফলাইন", "data": "ডেটা", "exportJSON": "JSON হিসেবে রপ্তানি করুন", "clearData": "সব ডেটা মুছুন", "clearConfirm": "আপনি কি নিশ্চিত? এটি পূর্বাবস্থায় ফেরানো যাবে না।", "clearYes": "হ্যাঁ, মুছুন", "clearCancel": "বাতিল করুন", "cleared": "সব ডেটা মুছে ফেলা হয়েছে।" },
+  "accessibility": { "title": "অ্যাক্সেসিবিলিটি", "fontSize": "ফন্ট সাইজ", "highContrast": "উচ্চ কনট্রাস্ট", "reduceMotion": "গতি কমান", "readAloud": "জোরে পড়ুন", "colorBlind": "বর্ণান্ধ মোড", "colorBlindOptions": { "none": "কোনোটি নয়", "deuteranopia": "ডিউটেরানোপিয়া", "protanopia": "প্রোটানোপিয়া", "monochrome": "মনোক্রোম" } },
+  "errors": { "generic": "কিছু একটা ভুল হয়েছে। আবার চেষ্টা করুন।", "offline": "আপনি অফলাইনে আছেন। আবার সংযুক্ত হলে পরিবর্তনগুলি সিঙ্ক হবে।", "noData": "কোনো ডেটা পাওয়া যায়নি।" },
+  "ai": { "fallback": "প্রতিটি ছোট পদক্ষেপ গুরুত্বপূর্ণ। মেট্রো ব্যবহার করলে প্রতিদিন ১ কিলো CO\u2082 বাঁচানো যায়।" }
+}

@@ -1,0 +1,22 @@
+{
+  "nav": { "home": "मुख्यपृष्ठ", "city": "शहर", "track": "ट्रॅक", "badges": "बॅज", "community": "समुदाय", "reports": "अहवाल", "settings": "सेटिंग्ज" },
+  "landing": { "tagline": "कार्बन पदठसा जागृती", "headline": "आपला प्रभाव जाणून घ्या.", "headlineAccent": "पृथ्वीला बरे करा.", "subtext": "Prithvi तुम्हाला तुमचा कार्बन पदठसा ट्रॅक, समजून घेण्यास आणि कमी करण्यात मदत करते.", "ctaStart": "ट्रॅकिंग सुरू करा", "ctaCommunity": "समुदायात सामील व्हा", "stats": { "cities": "शहरे ट्रॅक केली", "offset": "टन ऑफसेट", "badges": "बॅज मिळवले", "members": "सक्रिय सदस्य" } },
+  "score": { "good": "चांगले", "fair": "बरे", "poor": "वाईट", "label": "शहर आरोग्य", "srOnly": "तुमचा कार्बन स्कोर 100 पैकी {{score}} आहे — {{label}}" },
+  "tracking": {
+    "commute": { "label": "प्रवास", "description": "आज तुम्ही कसे प्रवास केले?", "walk": "चालणे", "cycle": "सायकल", "metro": "मेट्रो", "bus": "बस", "auto_cng": "ऑटो (CNG)", "bike_2wheeler": "बाइक", "car_petrol": "कार (पेट्रोल)", "car_diesel": "कार (डिझेल)", "cab": "कॅब" },
+    "food": { "label": "अन्न", "description": "आज तुम्ही काय खाल्ले?", "vegetarian": "शाकाहारी", "egg": "अंडे", "chicken": "चिकन", "mutton": "मटण" },
+    "energy": { "label": "ऊर्जा", "description": "आज ऊर्जा कशी वापरली?", "ac": "AC", "fan": "पंखा", "geyser_per_use": "गिझर" },
+    "cooking": { "label": "स्वयंपाक", "description": "आज स्वयंपाक कसा केला?", "lpg": "LPG", "induction": "इंडक्शन", "wood": "लाकूड" },
+    "waste": { "label": "कचरा", "description": "कचऱ्याची काळजी कशी घेतली?", "plastic_bag": "प्लास्टिक पिशवी", "delivery_packaging": "डिलिव्हरी बॉक्स" },
+    "logButton": "क्रियाकलाप नोंदवा", "logged": "यशस्वीरित्या नोंदवले", "empty": "आज कोणतेही क्रियाकलाप नोंदवले नाहीत"
+  },
+  "swap": { "title": "तुमची वैयक्तिक सूचना", "co2Saved": "CO\u2082 बचत", "moneySaved": "पैसे वाचवले", "pledge": "उद्यासाठी प्रतिज्ञा करा", "dismiss": "रद्द करा", "pledged": "उद्यासाठी प्रतिज्ञा केली — उत्तम निवड!" },
+  "city": { "title": "तुमचे शहर", "thriving": "भरभराट", "healthy": "निरोगी", "stressed": "ताण", "critical": "गंभीर", "score": "आरोग्य स्कोर" },
+  "badges": { "title": "बॅज आणि प्रगती", "locked": "बंद", "unlocked": "उघडे", "xp": "XP", "level": "स्तर", "streak": "दिवसांची मालिका" },
+  "community": { "title": "समुदाय", "tabs": { "city": "माझे शहर", "friends": "मित्र", "national": "राष्ट्रीय" }, "pledgeWall": "प्रतिज्ञा भित्ती", "leaderboard": "लीडरबोर्ड", "pledge": "प्रतिज्ञा करा", "support": "समर्थन", "supported": "समर्थित", "alreadyPosted": "आपण आज आधीच प्रतिज्ञा केली आहे. उद्या परत या!", "rank": "रँक", "weeklyScore": "साप्ताहिक स्कोर" },
+  "reports": { "title": "मासिक अहवाल", "bestDay": "सर्वोत्तम दिवस", "worstDay": "सर्वात वाईट दिवस", "topSources": "शीर्ष कार्बन स्रोत", "exportPDF": "PDF म्हणून निर्यात करा", "exportJSON": "JSON म्हणून निर्यात करा", "sharePNG": "दिवसाचे कार्ड शेअर करा", "noData": "अद्याप डेटा नाही. अहवाल पाहण्यासाठी ट्रॅकिंग सुरू करा." },
+  "settings": { "title": "सेटिंग्ज", "subtitle": "तुमच्या Prithvi प्राधान्यांचे व्यवस्थापन करा", "language": "भाषा", "city": "शहर", "notifications": "सूचना", "ai": "AI कॉन्फिगरेशन", "apiKey": "API की", "testConnection": "कनेक्शन चाचणी करा", "sync": "समक्रमण", "syncNow": "आता समक्रमित करा", "syncing": "समक्रमित होत आहे...", "synced": "समक्रमित झाले", "offline": "ऑफलाइन", "data": "डेटा", "exportJSON": "JSON म्हणून निर्यात करा", "clearData": "सर्व डेटा साफ करा", "clearConfirm": "तुम्हाला खात्री आहे का? हे पूर्ववत केले जाऊ शकत नाही.", "clearYes": "होय, साफ करा", "clearCancel": "रद्द करा", "cleared": "सर्व डेटा साफ झाला." },
+  "accessibility": { "title": "प्रवेशयोग्यता", "fontSize": "फॉन्ट आकार", "highContrast": "उच्च कॉन्ट्रास्ट", "reduceMotion": "गती कमी करा", "readAloud": "मोठ्याने वाचा", "colorBlind": "रंगांधळेपणाचा मोड", "colorBlindOptions": { "none": "कोणतेही नाही", "deuteranopia": "ड्यूटेरनोपिया", "protanopia": "प्रोटनोपिया", "monochrome": "मोनोक्रोम" } },
+  "errors": { "generic": "काहीतरी चुकले. कृपया पुन्हा प्रयत्न करा.", "offline": "तुम्ही ऑफलाइन आहात. तुम्ही पुन्हा कनेक्ट झाल्यावर बदल समक्रमित होतील.", "noData": "डेटा उपलब्ध नाही." },
+  "ai": { "fallback": "प्रत्येक छोटी कृती महत्त्वाची आहे. मेट्रो वापरल्याने दररोज 1 किलो CO\u2082 वाचवता येते." }
+}

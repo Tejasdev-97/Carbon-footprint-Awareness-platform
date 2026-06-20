@@ -1,0 +1,172 @@
+{
+  "nav": {
+    "home": "Home",
+    "city": "City",
+    "track": "Track",
+    "badges": "Badges",
+    "community": "Community",
+    "reports": "Reports",
+    "settings": "Settings"
+  },
+  "landing": {
+    "tagline": "Carbon Footprint Awareness",
+    "headline": "Know Your Impact.",
+    "headlineAccent": "Heal the Earth.",
+    "subtext": "Prithvi helps you track, understand, and reduce your carbon footprint — one city, one habit, one badge at a time.",
+    "ctaStart": "Start Tracking",
+    "ctaCommunity": "Join Community",
+    "stats": {
+      "cities": "Cities tracked",
+      "offset": "Tonnes offset",
+      "badges": "Badges earned",
+      "members": "Active members"
+    }
+  },
+  "score": {
+    "good": "Good",
+    "fair": "Fair",
+    "poor": "Poor",
+    "label": "City Health",
+    "srOnly": "Your carbon score is {{score}} out of 100 — {{label}}"
+  },
+  "tracking": {
+    "commute": {
+      "label": "Commute",
+      "description": "How did you travel today?",
+      "walk": "Walk",
+      "cycle": "Cycle",
+      "metro": "Metro",
+      "bus": "Bus",
+      "auto_cng": "Auto (CNG)",
+      "bike_2wheeler": "Bike",
+      "car_petrol": "Car (Petrol)",
+      "car_diesel": "Car (Diesel)",
+      "cab": "Cab"
+    },
+    "food": {
+      "label": "Food",
+      "description": "What did you eat today?",
+      "vegetarian": "Vegetarian",
+      "egg": "Egg",
+      "chicken": "Chicken",
+      "mutton": "Mutton"
+    },
+    "energy": {
+      "label": "Energy",
+      "description": "How did you power your day?",
+      "ac": "AC",
+      "fan": "Fan",
+      "geyser_per_use": "Geyser"
+    },
+    "cooking": {
+      "label": "Cooking",
+      "description": "How did you cook today?",
+      "lpg": "LPG",
+      "induction": "Induction",
+      "wood": "Wood Fire"
+    },
+    "waste": {
+      "label": "Waste",
+      "description": "How did you handle waste?",
+      "plastic_bag": "Plastic Bag",
+      "delivery_packaging": "Delivery Box"
+    },
+    "logButton": "Log Activity",
+    "logged": "Logged successfully",
+    "empty": "No activities logged today"
+  },
+  "swap": {
+    "title": "Your Personalised Suggestion",
+    "co2Saved": "CO\u2082 Saved",
+    "moneySaved": "Money Saved",
+    "pledge": "Pledge for Tomorrow",
+    "dismiss": "Dismiss",
+    "pledged": "Pledged for tomorrow — great choice!"
+  },
+  "city": {
+    "title": "Your City",
+    "thriving": "Thriving",
+    "healthy": "Healthy",
+    "stressed": "Stressed",
+    "critical": "Critical",
+    "score": "Health Score"
+  },
+  "badges": {
+    "title": "Badges & Progress",
+    "locked": "Locked",
+    "unlocked": "Unlocked",
+    "xp": "XP",
+    "level": "Level",
+    "streak": "Day Streak"
+  },
+  "community": {
+    "title": "Community",
+    "tabs": {
+      "city": "My City",
+      "friends": "Friends",
+      "national": "National"
+    },
+    "pledgeWall": "Pledge Wall",
+    "leaderboard": "Leaderboard",
+    "pledge": "Make a Pledge",
+    "support": "Support",
+    "supported": "Supported",
+    "alreadyPosted": "You have already made a pledge today. Come back tomorrow!",
+    "rank": "Rank",
+    "weeklyScore": "Weekly Score"
+  },
+  "reports": {
+    "title": "Monthly Reports",
+    "bestDay": "Best Day",
+    "worstDay": "Worst Day",
+    "topSources": "Top Carbon Sources",
+    "exportPDF": "Export as PDF",
+    "exportJSON": "Export as JSON",
+    "sharePNG": "Share Day Card",
+    "noData": "No data yet. Start tracking to see your reports."
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Manage your Prithvi preferences",
+    "language": "Language",
+    "city": "City",
+    "notifications": "Notifications",
+    "ai": "AI Configuration",
+    "apiKey": "API Key",
+    "testConnection": "Test Connection",
+    "sync": "Sync",
+    "syncNow": "Sync Now",
+    "syncing": "Syncing...",
+    "synced": "Synced",
+    "offline": "Offline",
+    "data": "Data",
+    "exportJSON": "Export as JSON",
+    "clearData": "Clear All Data",
+    "clearConfirm": "Are you sure? This cannot be undone.",
+    "clearYes": "Yes, clear",
+    "clearCancel": "Cancel",
+    "cleared": "All data cleared."
+  },
+  "accessibility": {
+    "title": "Accessibility",
+    "fontSize": "Font Size",
+    "highContrast": "High Contrast",
+    "reduceMotion": "Reduce Motion",
+    "readAloud": "Read Aloud",
+    "colorBlind": "Colour Blind Mode",
+    "colorBlindOptions": {
+      "none": "None",
+      "deuteranopia": "Deuteranopia",
+      "protanopia": "Protanopia",
+      "monochrome": "Monochrome"
+    }
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "offline": "You are offline. Changes will sync when you reconnect.",
+    "noData": "No data available."
+  },
+  "ai": {
+    "fallback": "Every small action counts. Taking the metro instead of a car can save over 1 kg of CO\u2082 per day."
+  }
+}

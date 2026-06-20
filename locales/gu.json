@@ -1,0 +1,22 @@
+{
+  "nav": { "home": "હોમ", "city": "શહેર", "track": "ટ્રૅક", "badges": "બેજ", "community": "સમુદાય", "reports": "અહેવાલ", "settings": "સેટિંગ" },
+  "landing": { "tagline": "કાર્બન ઉત્સર્જન જાગૃતિ", "headline": "તમારી અસર જાણો.", "headlineAccent": "પૃથ્વીને સ્વસ્થ કરો.", "subtext": "Prithvi તમને તમારા કાર્બન ઉત્સર્જનને ટ્રૅક, સમજવા અને ઘટાડવામાં મદદ કરે છે.", "ctaStart": "ટ્રૅકિંગ શરૂ કરો", "ctaCommunity": "સમુદાયમાં જોડાઓ", "stats": { "cities": "શહેરો ટ્રૅક", "offset": "ટન ઓફ્સેટ", "badges": "બેજ મળ્યા", "members": "સક્રિય સભ્ય" } },
+  "score": { "good": "સારું", "fair": "ઠીક", "poor": "ખરાબ", "label": "શહેર આરોગ્ય", "srOnly": "તમારો કાર્બન સ્કોર 100 માંથી {{score}} છે — {{label}}" },
+  "tracking": {
+    "commute": { "label": "પ્રવાસ", "description": "આજે તમે કેવી રીતે પ્રવાસ કર્યો?", "walk": "ચાલવું", "cycle": "સાઇકલ", "metro": "મેટ્રો", "bus": "બસ", "auto_cng": "ઑટો (CNG)", "bike_2wheeler": "બાઇક", "car_petrol": "કાર (પેટ્રોલ)", "car_diesel": "કાર (ડીઝલ)", "cab": "કૅબ" },
+    "food": { "label": "ભોજન", "description": "આજે તમે શું ખાધું?", "vegetarian": "શાકાહારી", "egg": "ઈંડું", "chicken": "ચિકન", "mutton": "મટન" },
+    "energy": { "label": "ઊર્જા", "description": "આજે ઊર્જા કેવી રીતે વાપરી?", "ac": "AC", "fan": "પંખો", "geyser_per_use": "ગીઝર" },
+    "cooking": { "label": "રસોઈ", "description": "આજે કેવી રીતે રસોઈ કરી?", "lpg": "LPG", "induction": "ઇન્ડક્શન", "wood": "લાકડું" },
+    "waste": { "label": "કચરો", "description": "કચરાનું સંચાલન કેવી રીતે કર્યું?", "plastic_bag": "પ્લાસ્ટિક થેલી", "delivery_packaging": "ડિલિવરી બૉક્સ" },
+    "logButton": "પ્રવૃત્તિ નોંધો", "logged": "સફળતાપૂર્વક નોંધ્યું", "empty": "આજે કોઈ પ્રવૃત્તિ નોંધાઈ નથી"
+  },
+  "swap": { "title": "તમારી વ્યક્તિગત સૂચના", "co2Saved": "CO\u2082 બચત", "moneySaved": "નાણાં બચત", "pledge": "આવતીકાલ માટે વચન આપો", "dismiss": "અવગણો", "pledged": "આવતીકાલ માટે વચન આપ્યું — ઉત્તમ પસંદ!" },
+  "city": { "title": "તમારું શહેર", "thriving": "સમૃદ્ધ", "healthy": "સ્વસ્થ", "stressed": "તાણ", "critical": "ગંભીર", "score": "આરોગ્ય સ્કોર" },
+  "badges": { "title": "બેજ અને પ્રગતિ", "locked": "બંધ", "unlocked": "ખુલ્લું", "xp": "XP", "level": "સ્તર", "streak": "દિવસ ક્રમ" },
+  "community": { "title": "સમુદાય", "tabs": { "city": "મારું શહેર", "friends": "મિત્રો", "national": "રાષ્ટ્રીય" }, "pledgeWall": "વચન દીવાલ", "leaderboard": "લીડરબોર્ડ", "pledge": "વચન આપો", "support": "સમર્થન", "supported": "સમર્થિત", "alreadyPosted": "તમે આજે પહેલેથી જ વચન આપ્યું છે. કાલે પાછા આવો!", "rank": "ક્રમ", "weeklyScore": "સાપ્તાહિક સ્કોર" },
+  "reports": { "title": "માસિક અહેવાલ", "bestDay": "સૌથી સારો દિવસ", "worstDay": "સૌથી ખરાબ દિવસ", "topSources": "ટોચના કાર્બન સ્ત્રોત", "exportPDF": "PDF તરીકે નિકાસ કરો", "exportJSON": "JSON તરીકે નિકાસ કરો", "sharePNG": "દિવસ કાર્ડ શૅર કરો", "noData": "હજી ડેટા નથી. અહેવાલ જોવા ટ્રૅકિંગ શરૂ કરો." },
+  "settings": { "title": "સેટિંગ", "subtitle": "તમારી Prithvi પ્રાધાન્યતા સંચાલિત કરો", "language": "ભાષા", "city": "શહેર", "notifications": "સૂચનાઓ", "ai": "AI રૂપરેખા", "apiKey": "API ચાવી", "testConnection": "જોડાણ ચકાસો", "sync": "સમન્વય", "syncNow": "હવે સમન્વય કરો", "syncing": "સમન્વય થઈ રહ્યો છે...", "synced": "સમન્વય થઈ ગયો", "offline": "ઑફલાઇન", "data": "ડેટા", "exportJSON": "JSON તરીકે નિકાસ કરો", "clearData": "બધો ડેટા સાફ કરો", "clearConfirm": "શું તમને ખાતરી છે? આ પૂર્વવત્ કરી શકાય નહીં.", "clearYes": "હા, સાફ કરો", "clearCancel": "રદ કરો", "cleared": "બધો ડેટા સાફ થઈ ગયો." },
+  "accessibility": { "title": "ઍક્સેસિબિલિટી", "fontSize": "ફૉન્ટ કદ", "highContrast": "ઉચ્ચ કોન્ટ્રાસ્ટ", "reduceMotion": "ગતિ ઘટાડો", "readAloud": "મોટેથી વાંચો", "colorBlind": "રંગ-અંધ સ્થિતિ", "colorBlindOptions": { "none": "કંઈ નહીં", "deuteranopia": "ડ્યુટેરેનોપિયા", "protanopia": "પ્રોટેનોપિયા", "monochrome": "મોનોક્રોમ" } },
+  "errors": { "generic": "કંઈક ખોટું થઈ ગયું. ફરી પ્રયત્ન કરો.", "offline": "તમે ઑફલાઇન છો. ફરી જોડાયા પછી ફેરફારો સમન્વય થશે.", "noData": "ડેટા ઉપલબ્ધ નથી." },
+  "ai": { "fallback": "દરેક નાનો કદમ મહત્વનો છે. મેટ્રો વાપરવાથી દરરોજ 1 કિલો CO\u2082 બચાવી શકાય છે." }
+}
