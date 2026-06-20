@@ -13,7 +13,7 @@ const HeroGlobe = dynamic(
 
 const STATS = [
   { icon: MapPin, value: '320+', label: 'Cities tracked' },
-  { icon: BarChart3, value: '1.2M', label: 'Tonnes offset' },
+  { icon: BarChart3, value: '4.2K', label: 'Tonnes offset' },
   { icon: Award, value: '48K', label: 'Badges earned' },
   { icon: Users, value: '92K', label: 'Active members' },
 ]

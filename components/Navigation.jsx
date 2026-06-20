@@ -14,7 +14,8 @@ import {
   Sprout,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { getSetting } from "@/lib/db";
+import { getSetting, putSetting } from "@/lib/db";
+import i18n from "@/lib/i18n";
 
 // ── Data ────────────────────────────────────────────────────────────────
 const NAV_LINKS = [
@@ -167,6 +168,9 @@ function LanguageDropdown() {
                 onClick={() => {
                   setSelected(lang);
                   setOpen(false);
+                  // Persist selection and switch app language immediately
+                  i18n.changeLanguage(lang.code).catch(() => {})
+                  putSetting('language', lang.code).catch(() => {})
                 }}
                 className={cn(
                   "w-full text-left px-4 py-2 text-sm rounded-xl mx-auto transition-colors duration-150",

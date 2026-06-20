@@ -102,8 +102,10 @@ export default function DailyAnalyzer() {
     try {
       await Promise.all(result.logEntries.map((entry) => writeLog(entry, isOnline)))
       setSaved(true)
-    } catch {
-      // Non-critical — user can retry
+    } catch (err) {
+      // Surface a user-visible error rather than silently dropping the failure
+      console.error('[DailyAnalyzer] Failed to save log entries:', err)
+      setMicError('Could not save to your carbon log. Please try again.')
     }
   }, [result, isOnline])
 
