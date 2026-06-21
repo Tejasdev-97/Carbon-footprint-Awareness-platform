@@ -2,7 +2,6 @@
 
 import dynamic from 'next/dynamic'
 import { useEffect, useRef, useState } from 'react'
-import PropTypes from 'prop-types'
 
 const Globe = dynamic(
   () => import('react-globe.gl'),
@@ -107,9 +106,4 @@ export default function HeroGlobe({ size = 500 }) {
       />
     </div>
   )
-}
-
-HeroGlobe.propTypes = {
-  /** Globe diameter in pixels. Defaults to 500. */
-  size: PropTypes.number,
 }
