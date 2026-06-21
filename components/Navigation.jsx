@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getSetting, putSetting } from "@/lib/db";
+import { useTranslation } from "react-i18next";
 import i18n from "@/lib/i18n";
 
 // ── Data ────────────────────────────────────────────────────────────────
@@ -40,6 +41,10 @@ const LANGUAGES = [
   { code: "ta", label: "தமிழ்" },
   { code: "te", label: "తెలుగు" },
   { code: "kn", label: "ಕನ್ನಡ" },
+  { code: "mr", label: "मराठी" },
+  { code: "bn", label: "বাংলা" },
+  { code: "gu", label: "ગુજરાતી" },
+  { code: "ml", label: "മലയാളം" },
 ];
 
 // ── Sub-components ───────────────────────────────────────────────────────
@@ -67,11 +72,13 @@ function Logo() {
 
 /** Desktop centre nav links */
 function DesktopLinks({ active, onboarded }) {
+  const { t } = useTranslation();
   return (
     <nav aria-label="Main navigation">
       <ul className="flex items-center gap-1" role="list">
         {NAV_LINKS.map(({ label }) => {
           const href = label === "Home" ? "/" : (onboarded ? `/dashboard/${label.toLowerCase()}` : "/onboarding");
+          const translationKey = `nav.${label.toLowerCase()}`;
           return (
             <li key={label}>
               <a
@@ -85,7 +92,7 @@ function DesktopLinks({ active, onboarded }) {
                 )}
                 aria-current={active === label ? "page" : undefined}
               >
-                {label}
+                {t(translationKey, label)}
                 {active === label && (
                   <span
                     className="absolute inset-x-3 -bottom-px h-0.5 rounded-full bg-primary"
@@ -103,9 +110,16 @@ function DesktopLinks({ active, onboarded }) {
 
 /** Language dropdown */
 function LanguageDropdown() {
+  const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(LANGUAGES[0]);
   const ref = useRef(null);
+
+  // Sync selected dropdown language with active i18n language
+  useEffect(() => {
+    const match = LANGUAGES.find((lang) => lang.code === i18n.language);
+    if (match) setSelected(match);
+  }, [i18n.language]);
 
   // Close on outside click
   useEffect(() => {
@@ -214,6 +228,7 @@ function ThemeToggle({ dark, onToggle }) {
 
 /** CTA button */
 function CTAButton() {
+  const { t } = useTranslation();
   return (
     <a
       href="/onboarding"
@@ -225,7 +240,7 @@ function CTAButton() {
       )}
     >
       <Leaf className="size-3.5" aria-hidden="true" />
-      Track My Impact
+      {t('landing.ctaStart', 'Track My Impact')}
     </a>
   );
 }
@@ -320,12 +335,14 @@ export default function Navigation() {
         {MOBILE_TABS.map(({ label, Icon }) => {
           const href = label === "Home" ? "/" : (onboarded ? `/dashboard/${label.toLowerCase()}` : "/onboarding");
           const isActive = activeTab === label;
+          const { t } = useTranslation();
+          const translationKey = `nav.${label.toLowerCase()}`;
           return (
             <a
               key={label}
               href={href}
               onClick={() => setActiveTab(label)}
-              aria-label={label}
+              aria-label={t(translationKey, label)}
               aria-current={isActive ? "page" : undefined}
               className={cn(
                 "flex flex-col items-center gap-0.5 px-3 py-1 rounded-2xl",
@@ -349,7 +366,7 @@ export default function Navigation() {
                   isActive ? "text-primary" : "text-muted-foreground"
                 )}
               >
-                {label}
+                {t(translationKey, label)}
               </span>
             </a>
           );

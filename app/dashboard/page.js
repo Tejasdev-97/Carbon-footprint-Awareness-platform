@@ -132,6 +132,7 @@ export default function DashboardPage() {
             bestAction={suggestion?.action ?? 'Log an activity to see your best action'}
             worstAction={breakdown.commute > 1.5 ? 'High commute emissions today' : 'Check your energy usage'}
             coinsEarned={player.coins}
+            userName={userName || ''}
             cityName={cityName || 'Your City'}
           />
         </div>

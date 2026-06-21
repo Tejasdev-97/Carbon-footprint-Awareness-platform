@@ -123,8 +123,8 @@ export function DayCard({
   bestAction = "Took the metro instead of driving",
   worstAction = "Left charger plugged in overnight",
   coinsEarned = 42,
-  userName = "Arjun",
-  cityName = "Bengaluru",
+  userName = "",
+  cityName = "",
   onShare,
   className,
 }) {
@@ -162,7 +162,7 @@ export function DayCard({
               {formattedDate}
             </p>
             <h2 className="mt-0.5 text-base font-bold leading-tight text-foreground">
-              {userName}&apos;s Day Summary
+              {userName ? `${userName}'s Day Summary` : 'Your Day Summary'}
             </h2>
           </div>
 

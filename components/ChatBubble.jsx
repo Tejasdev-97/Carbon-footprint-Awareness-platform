@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useId } from "react";
 import { getSetting, putSetting } from "@/lib/db";
+import { getAIInsight } from "@/lib/gemini";
 import {
   MessageCircle,
   X,
@@ -136,6 +137,7 @@ export function ChatBubble({ onSend }) {
   const [keyVisible, setKeyVisible]     = useState(false);
   const [keySaved, setKeySaved]         = useState(false);
   const [showKeyInput, setShowKeyInput] = useState(false);
+  const [isTyping, setIsTyping]         = useState(false);
 
   const inputRef    = useRef(null);
   const scrollRef   = useRef(null);
@@ -191,30 +193,63 @@ export function ChatBubble({ onSend }) {
     return () => window.removeEventListener("keydown", handleKey);
   }, [open]);
 
-  /* ── Send ─────────────────────────────────────────────────────────── */
-  function handleSend() {
+  async function handleSend() {
     const text = inputValue.trim();
     if (!text) return;
 
     const userMsg = { id: `u-${Date.now()}`, role: "user", text };
 
-    // Simulated assistant reply
-    const replyText =
-      activeTab === "help"
-        ? "For more help, visit the Prithvi community forums or tap a section in the app to explore."
-        : "Great question! Every small action counts. Try logging your commute today to see your impact.";
-    const assistantMsg = {
-      id: `a-${Date.now() + 1}`,
-      role: "assistant",
-      text: replyText,
-    };
-
     setMessages((prev) => ({
       ...prev,
-      [activeTab]: [...prev[activeTab], userMsg, assistantMsg],
+      [activeTab]: [...prev[activeTab], userMsg],
     }));
     setInput("");
     onSend?.({ tab: activeTab, text });
+
+    // Show typing indicator
+    setIsTyping(true);
+
+    try {
+      // Get user's stored language preference
+      const storedLang = await getSetting("language", "en").catch(() => "en");
+      // Convert 2-char code to BCP-47
+      const langMap = {
+        en: "en-IN", hi: "hi-IN", ta: "ta-IN", te: "te-IN",
+        bn: "bn-IN", mr: "mr-IN", kn: "kn-IN", gu: "gu-IN", ml: "ml-IN",
+      };
+      const language = langMap[storedLang] || "en-IN";
+
+      let replyText;
+      if (activeTab === "help") {
+        replyText = "For more help, visit the Prithvi community forums or tap a section in the app to explore.";
+      } else {
+        const { text: aiText } = await getAIInsight(text, language);
+        replyText = aiText;
+      }
+
+      const assistantMsg = {
+        id: `a-${Date.now() + 1}`,
+        role: "assistant",
+        text: replyText,
+      };
+
+      setMessages((prev) => ({
+        ...prev,
+        [activeTab]: [...prev[activeTab], assistantMsg],
+      }));
+    } catch {
+      const fallbackMsg = {
+        id: `a-${Date.now() + 1}`,
+        role: "assistant",
+        text: "Sorry, I had trouble responding. Please try again in a moment.",
+      };
+      setMessages((prev) => ({
+        ...prev,
+        [activeTab]: [...prev[activeTab], fallbackMsg],
+      }));
+    } finally {
+      setIsTyping(false);
+    }
   }
 
   function handleKeyDown(e) {
@@ -405,6 +440,25 @@ export function ChatBubble({ onSend }) {
           {currentMessages.map((msg) => (
             <MessageBubble key={msg.id} message={msg} />
           ))}
+
+          {/* Typing indicator */}
+          {isTyping && activeTab === "assistant" && (
+            <div className="flex w-full justify-start animate-in fade-in duration-200">
+              <span
+                aria-hidden="true"
+                className="mr-2 mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary"
+              >
+                <Leaf className="size-3.5" />
+              </span>
+              <div className="max-w-[80%] rounded-2xl rounded-bl-sm bg-secondary px-3.5 py-2.5">
+                <span className="flex gap-1 items-center h-4">
+                  <span className="size-1.5 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: '0ms' }} />
+                  <span className="size-1.5 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: '150ms' }} />
+                  <span className="size-1.5 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: '300ms' }} />
+                </span>
+              </div>
+            </div>
+          )}
 
           {/* Quick replies — only in assistant tab and after initial message */}
           {activeTab === "assistant" && currentMessages.length <= 2 && (
