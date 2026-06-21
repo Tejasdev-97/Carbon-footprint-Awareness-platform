@@ -51,7 +51,16 @@ Built for the **Google PromptWars Hackathon** using Next.js 16, React, TailwindC
 
 ## 🔗 Live Demo
 
-> Coming soon — deploy instructions below.
+Prithvi is a **fully client-side application** — no backend server is required. To experience it:
+
+```bash
+git clone https://github.com/Tejasdev-97/Carbon-footprint-Awareness-platform.git
+cd Carbon-footprint-Awareness-platform
+npm install && npm run dev
+# Open http://localhost:3000
+```
+
+Or deploy your own instance to [Vercel](https://vercel.com/) in one click — all features work without any server setup.
 
 ---
 
@@ -321,7 +330,42 @@ Calls Google Gemini API using the user's own key. Provides personalised eco-sugg
 
 ---
 
-## 🔒 Security
+## 📐 India-Specific Emission Data
+
+All emission factors are calibrated for **Indian conditions** and sourced from peer-reviewed, government, and industry data:
+
+| Category | Source | Key Factor |
+|---|---|---|
+| **Road transport** | [ICCT India 2023](https://theicct.org/) | Petrol car: 0.12 kg CO₂/km; Metro: 0.015 kg CO₂/km |
+| **Electricity grid** | [CEA India Grid Emission Factor 2023](https://cea.nic.in/) | 0.716 kg CO₂/kWh (national average) |
+| **LPG cooking** | [PCRA / BEE India](https://beeindia.gov.in/) | 0.4 kg CO₂/meal equivalent |
+| **Wood/biomass cooking** | [WHO / IPCC AR6](https://www.ipcc.ch/) | 1.1 kg CO₂/meal; also contributes to indoor PM2.5 |
+| **Food (livestock)** | [IPCC AR6 WG3, Chapter 7](https://www.ipcc.ch/) | Mutton: 3.5 kg CO₂e/portion; Chicken: 1.5 kg CO₂e/portion |
+| **Auto-rickshaw (CNG)** | [CPCB India](https://cpcb.nic.in/) | 0.065 kg CO₂/km |
+| **Plastic waste** | [CSE India](https://www.cseindia.org/) | 0.05 kg CO₂e per single-use bag |
+
+The quiz baseline and daily score use a **penalty factor of 8 points per kg CO₂**, calibrated so that the average high-emission Indian urban household (≈12.5 kg CO₂/day) scores exactly 0.
+
+---
+
+## 🗺️ Known Limitations & Future Roadmap
+
+### Current Limitations
+
+| Area | Limitation | Reason |
+|---|---|---|
+| **Air Quality (AQI)** | No real-time AQI/WAQI data feed | Requires a WAQI API subscription; planned for v2 |
+| **EV charging** | Not separately tracked | Factors under research for Indian grid mix by state |
+| **Household size** | Single-occupant assumed | Multi-person household calculations in roadmap |
+| **Seasonal variation** | Static emission factors | Summer AC load vs. winter heating not yet differentiated |
+
+### Roadmap (v2+)
+
+- 🌡️ **Real-time AQI integration** (WAQI / Sambhav API) — correlate local air quality to user's city score
+- 🏘️ **Household mode** — split carbon across family members
+- 🔌 **State-wise electricity factors** — grid emission factor varies from 0.4 (Kerala hydro) to 1.0+ (coal-heavy states)
+- 📱 **Native PWA push notifications** — daily eco reminders
+- 🤝 **Workplace carbon tracking** — office commute and corporate emissions module
 
 | Practice | Implementation |
 |---|---|
@@ -356,8 +400,11 @@ Prithvi targets **WCAG 2.1 Level AA** compliance:
 # Run unit tests
 npm test
 
-# Run tests with coverage
+# Run tests with verbose output (shows per-file and per-test results)
 npm run test:coverage
+
+# Run tests in watch mode (during development)
+npm run test:watch
 ```
 
 Tests use [Vitest](https://vitest.dev/) and are located in `/tests/`.

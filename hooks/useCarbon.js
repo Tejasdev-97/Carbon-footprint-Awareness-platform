@@ -42,7 +42,7 @@ async function updateStreak(today) {
     await putSetting('streakCount', newStreak)
     await putSetting('streakLastDate', today)
   } catch {
-    // Non-critical — silently fail so logging still works
+    /* non-critical, silent failure by design */
   }
 }
 
@@ -57,7 +57,7 @@ async function awardLogXP() {
     await putSetting('totalXP',    currentXP    + 5)
     await putSetting('totalCoins', currentCoins + 2)
   } catch {
-    // Non-critical
+    /* non-critical, silent failure by design */
   }
 }
 
@@ -73,8 +73,8 @@ async function awardLogXP() {
  *   suggestion: Object,
  *   logs: Array,
  *   loading: boolean,
- *   logEntry: (entry: Object) => Promise<void>,
- *   refresh: () => void
+ *   logEntry: (category: 'commute'|'energy'|'cooking'|'food'|'waste', optionId: string|null, logParams?: Object) => Promise<void>,
+ *   refresh: () => Promise<void>
  * }}
  */
 export function useCarbon(isOnline = false) {

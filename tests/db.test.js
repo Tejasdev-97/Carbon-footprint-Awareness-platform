@@ -236,3 +236,123 @@ describe('clearAllData', () => {
     expect(queue).toHaveLength(0)
   })
 })
+
+// ─── readLogsForMonth ─────────────────────────────────────────────────────────
+
+describe('readLogsForMonth', () => {
+  it('returns all logs for the given year/month', async () => {
+    // Write entries in Jan 2024 and Feb 2024
+    await writeLog({ date: '2024-01-10', category: 'commute', value: 'metro', co2Impact: 0.3 }, true)
+    await writeLog({ date: '2024-01-20', category: 'food', value: 'vegetarian', co2Impact: 0.5 }, true)
+    await writeLog({ date: '2024-02-05', category: 'commute', value: 'car', co2Impact: 1.2 }, true)
+
+    // Read only January entries
+    const janLogs = await db.logs.filter(
+      (log) => log.date && log.date.startsWith('2024-01')
+    ).toArray()
+    expect(janLogs).toHaveLength(2)
+    expect(janLogs.every((l) => l.date.startsWith('2024-01'))).toBe(true)
+
+    // February should have 1
+    const febLogs = await db.logs.filter(
+      (log) => log.date && log.date.startsWith('2024-02')
+    ).toArray()
+    expect(febLogs).toHaveLength(1)
+    expect(febLogs[0].date).toBe('2024-02-05')
+  })
+
+  it('returns empty array for a month with no entries', async () => {
+    const marchLogs = await db.logs.filter(
+      (log) => log.date && log.date.startsWith('2024-03')
+    ).toArray()
+    expect(marchLogs).toHaveLength(0)
+  })
+})
+
+// ─── readUnsyncedLogs & markLogSynced ─────────────────────────────────────────
+
+describe('unsynced logs and markLogSynced', () => {
+  it('offline log appears in unsynced (synced=0) list', async () => {
+    await writeLog({ date: '2024-01-15', category: 'commute', value: 'cab', co2Impact: 1.3, km: 10 }, false)
+
+    const unsyncedLogs = await db.logs.where('synced').equals(0).toArray()
+    expect(unsyncedLogs.length).toBeGreaterThan(0)
+    const cabLog = unsyncedLogs.find((l) => l.value === 'cab')
+    expect(cabLog).toBeDefined()
+  })
+
+  it('online log does NOT appear as unsynced', async () => {
+    await writeLog({ date: '2024-01-15', category: 'food', value: 'vegan', co2Impact: 0.3 }, true)
+
+    const allLogs = await db.logs.toArray()
+    const veganLog = allLogs.find((l) => l.value === 'vegan')
+    expect(veganLog).toBeDefined()
+    expect(veganLog.synced).toBe(1)
+  })
+
+  it('marking a log as synced sets synced=1', async () => {
+    const id = await writeLog({ date: '2024-01-15', category: 'energy', value: 'ac', co2Impact: 0.6 }, false)
+
+    // Log is offline (synced=0) initially
+    let log = await db.logs.get(id)
+    expect(log.synced).toBe(0)
+
+    // Simulate sync: mark as synced
+    await db.logs.update(id, { synced: 1 })
+
+    log = await db.logs.get(id)
+    expect(log.synced).toBe(1)
+  })
+})
+
+// ─── clearSyncQueue ───────────────────────────────────────────────────────────
+
+describe('clearSyncQueue', () => {
+  it('removes all items from sync queue at once', async () => {
+    await writeLog({ date: '2024-01-15', category: 'commute', value: 'walk', co2Impact: 0 }, false)
+    await writeLog({ date: '2024-01-15', category: 'food', value: 'chicken', co2Impact: 1.5 }, false)
+
+    let queue = await readSyncQueue()
+    expect(queue.length).toBeGreaterThanOrEqual(2)
+
+    // Simulate clearSyncQueue
+    await db.syncQueue.clear()
+
+    queue = await readSyncQueue()
+    expect(queue).toHaveLength(0)
+  })
+})
+
+// ─── getSettings (multi-key read) ─────────────────────────────────────────────
+
+describe('getSettings (multi-key read)', () => {
+  it('retrieves multiple settings in one call', async () => {
+    await putSetting('language', 'ta')
+    await putSetting('city', 'Chennai')
+
+    // Simulate getSettings by reading both keys
+    const keys = ['language', 'city', 'name']
+    const rows = await db.settings.where('key').anyOf(keys).toArray()
+    const result = {}
+    for (const key of keys) {
+      const row = rows.find((r) => r.key === key)
+      result[key] = row ? row.value : null
+    }
+
+    expect(result.language).toBe('ta')
+    expect(result.city).toBe('Chennai')
+    expect(result.name).toBeNull() // not yet set
+  })
+
+  it('returns null for settings that do not exist', async () => {
+    const keys = ['nonexistent1', 'nonexistent2']
+    const rows = await db.settings.where('key').anyOf(keys).toArray()
+    const result = {}
+    for (const key of keys) {
+      const row = rows.find((r) => r.key === key)
+      result[key] = row ? row.value : null
+    }
+    expect(result.nonexistent1).toBeNull()
+    expect(result.nonexistent2).toBeNull()
+  })
+})

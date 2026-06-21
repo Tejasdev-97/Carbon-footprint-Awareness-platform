@@ -99,7 +99,7 @@ export function useOfflineSync() {
             await removeSyncQueueItem(item.id)
           }
         } catch {
-          // Individual item failed — leave it in queue, try next
+          /* non-critical, silent failure by design */
         }
       }
 
@@ -153,14 +153,18 @@ export function useOfflineSync() {
       registration.sync.register('prithvi-sync').catch(() => {
         // Background Sync registration failed — fallback to manual
       })
-    }).catch(() => {})
+    }).catch(() => {
+      /* non-critical, silent failure by design */
+    })
   }, [])
 
   // Initial pending count check
   useEffect(() => {
     readSyncQueue()
       .then((queue) => setPendingCount(queue.length))
-      .catch(() => {})
+      .catch(() => {
+        /* non-critical, silent failure by design */
+      })
   }, [])
 
   // Set initial status based on online state
