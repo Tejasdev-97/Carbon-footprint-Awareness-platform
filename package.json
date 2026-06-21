@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "test": "vitest run",
     "test:coverage": "vitest run --reporter=verbose",
     "test:watch": "vitest"
@@ -45,6 +45,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitest/ui": "^3.2.4",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.9",
     "fake-indexeddb": "^6.0.0",
     "jsdom": "^26.1.0",
     "postcss": "^8.5",
